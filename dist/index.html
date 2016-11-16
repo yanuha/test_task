@@ -1,14 +1,14 @@
 <!DOCTYPE html><!--[if lt IE 8]>
-<html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="">
+<html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="ru">
 <![endif]-->
 <!--[if IE 8]>
-<html class="no-js lt-ie10 lt-ie9" lang="">
+<html class="no-js lt-ie10 lt-ie9" lang="ru">
 <![endif]-->
 <!--[if IE 9]>
-<html class="no-js lt-ie10" lang="">
+<html class="no-js lt-ie10" lang="ru">
 <![endif]-->
 <!--[if gt IE 9]><!-->
-<html lang="" class="no-js"><!--<![endif]-->
+<html lang="ru" class="no-js"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
@@ -17,9 +17,9 @@
     <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
     <title>test task</title>
-    <meta name="description">
-    <meta name="keywords">
-    <meta name="copyright">
+    <meta name="description" content="Description">
+    <meta name="keywords" content="Keywords">
+    <meta name="copyright" content="Copyright">
     
     <link rel="stylesheet" href="css/main.css">
     <script src="scripts/vendor.js"></script>
@@ -33,7 +33,7 @@
       <div class="content">
         <div class="container">
           <header class="header">
-            <h1 class="header__logo-wrapper"><a href="" class="header__logo"><img src="img/logo@2x.png" width="150" height="79" alt=""></a></h1>
+            <h1 class="header__logo-wrapper"><a href="" class="header__logo"><span class="sr-only">Logo img</span><img src="img/logo@2x.png" width="150" height="79" alt=""></a></h1>
           </header>
           <div class="page-header">
             <h2 class="page-title">Тестовое задание.</h2>
@@ -43,13 +43,11 @@
               <div class="task-list__item">
                 <div class="task-list__item-title">Поиск</div>
                 <div class="task-list__item-body">
-                  <form action="demo_form.asp" method="get">
+                  <form action="search">
                     <div class="input-group input-group__search">
                       <div class="form-control-input">
-                        <input type="text" placeholder="Search" class="form-control"><span class="sprite sprite-search"></span>
-                        <button type="reset" class="search-reset-btn">
-                          <div class="sprite sprite-delete"></div>
-                        </button>
+                        <input type="text" placeholder="Search" class="form-control"><i class="sprite sprite-search"></i>
+                        <button type="reset" class="search-reset-btn"><i class="sprite sprite-delete"></i></button>
                       </div><span class="input-group-btn">
                         <button type="button" class="btn btn__search btn__warning">Go</button></span>
                     </div>

@@ -2,6 +2,9 @@ extends templates/layouts/_default
 
 block head
   - pageTitle = "test task";
+  - pageDescription = "Description"
+  - pageKeywords = "Keywords"
+  - pageCopyright = "Copyright"
 
 block content
   .page-header
@@ -12,13 +15,13 @@ block content
       .task-list__item
         .task-list__item-title Поиск
         .task-list__item-body
-          form(action="demo_form.asp" method="get")
+          form(action="search")
             .input-group.input-group__search
               .form-control-input
                 input.form-control(type='text', placeholder='Search')
-                span.sprite.sprite-search
+                i.sprite.sprite-search
                 button(type="reset").search-reset-btn
-                  .sprite.sprite-delete
+                  i.sprite.sprite-delete
               span.input-group-btn
                 button.btn.btn__search.btn__warning(type='button') Go
 
