@@ -1,0 +1,55 @@
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: 400px;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 10px 17px;
+  font-size: 14px;
+  border-radius: 3px;
+  user-select: none;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: pointer;
+    opacity: .65;
+  }
+  &.btn__warning {
+    height: 38px;
+    @include filter-gradient(#fc881c, #b91602, vertical); // IE6-9
+    @include background-image(linear-gradient(top,  rgba(252,136,28,0.98) 0%,rgba(185,22,2,0.98) 100%));
+    color: #fff;
+    &:hover {
+      @include filter-gradient(#b91602, #fc881c, vertical); // IE6-9
+      @include background-image(linear-gradient(top,  rgba(185,22,2,0.98) 0%,rgba(252,136,28,0.98) 100%));
+
+    }
+  }
+
+  // [converter] extracted a& to a.btn
+}
+
+a.btn {
+  &.disabled,
+  fieldset[disabled] & {
+    pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+  }
+}

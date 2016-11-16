@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+}
+
+.main-wrapper {
+  background: #181818 url(../#{$img-fron-end}/bg.jpg) top center no-repeat;
+  background-size: cover;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  @include center(865px, 15px);
+}
+
+.content {
+  display: table-row;
+  height: 100%;
+}

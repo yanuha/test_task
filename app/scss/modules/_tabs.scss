@@ -1,0 +1,99 @@
+.tabs__list {
+  @include clearfix;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 5px;
+}
+
+.tabs__list-item {
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 25px;
+  &:last-child {
+    margin-right: 0;
+  }
+  a {
+    color: #fb871e;
+    font-family: "Arial Narrow", "Arial", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 0 2px;
+    border-bottom: 0.16px dotted #fc881c;
+    &:hover {
+      border-color: transparent;
+    }
+  }
+  &.active {
+    a {
+      color: #b91602;
+      border-color: transparent;
+    }
+  }
+}
+
+.tab__header-title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0 0 20px;
+}
+
+.tab__body-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  @include breakpoint(800px) {
+    overflow: hidden;
+  }
+  p {
+    margin: 0 0 15px;
+  }
+  ol {
+    padding-left: 20px;
+    margin: 0;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .tabs__list_2 {
+    li {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.tab__body-text_2-col {
+  @include breakpoint(800px) {
+    columns: 2 auto;
+    column-rule: 1px solid #353535;
+    column-gap: 40px;
+  }
+}
+
+.sub-list-title {
+  font-size: inherit;
+  font-weight: 400;
+  margin: 0;
+}
+
+.tab__body-thumbnail {
+  float: left;
+  max-width: 100%;
+  margin: 0 20px 10px 0;
+  @include breakpoint(800px) {
+    max-width: 40%;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}

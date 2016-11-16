@@ -1,0 +1,75 @@
+html {
+  &:not(.lt-ie9) {
+    .custom-checkbo-wr {
+      position: relative;
+      label {
+        line-height: 21px;
+        display: inline-block;
+      }
+      [type="checkbox"]:not(:checked),
+      [type="checkbox"]:checked {
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include opacity(0);
+      }
+      [type="checkbox"]:not(:checked) + label,
+      [type="checkbox"]:checked + label {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+      }
+
+      /* checkbox aspect */
+      [type="checkbox"]:not(:checked) + label:before,
+      [type="checkbox"]:checked + label:before {
+        content: '';
+        position: absolute;
+        left:0;
+        top: 0;
+        width: 19px;
+        height: 19px;
+        border: 1px solid #fc881c;
+      }
+      /* checked mark aspect */
+      [type="checkbox"]:not(:checked) + label:after,
+      [type="checkbox"]:checked + label:after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 5px;
+        @include sprite-sprite(checkbox);
+        // width: 13px;
+        // height: 15px;
+        // background: url(../img/sprite/checkbox.png) center center no-repeat;
+        line-height: 1;
+        @extend %transition;
+      }
+      /* checked mark aspect changes */
+      [type="checkbox"]:not(:checked) + label:after {
+        @include opacity(0);
+        @include transform(scale(0));
+      }
+      [type="checkbox"]:checked + label:after {
+        @include opacity(1);
+        @include transform(scale(1));
+      }
+      /* disabled checkbox */
+      [type="checkbox"]:disabled:not(:checked) + label:before,
+      [type="checkbox"]:disabled:checked + label:before {
+        @include opacity(.5);
+      }
+      [type="checkbox"]:disabled:checked + label:after {
+        color: #999;
+      }
+      [type="checkbox"]:disabled + label {
+        color: #aaa;
+      }
+      /* accessibility */
+      [type="checkbox"]:checked:focus + label:before,
+      [type="checkbox"]:not(:checked):focus + label:before {
+        border-color: #b91602;
+      }
+    }
+  }
+}

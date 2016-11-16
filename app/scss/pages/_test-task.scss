@@ -1,0 +1,222 @@
+.page-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
+  margin: 0;
+}
+
+.task-list {
+  counter-reset: heading;
+}
+
+.task-list__item {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 20px;
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.task-list__item-title {
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 10px;
+  &:before {
+    counter-increment: heading;
+    content: counter(heading) ". ";
+   }
+}
+
+.task-list__item-body {
+  padding-left: 17px;
+}
+
+
+// search form
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  .form-control-input {
+    display: table-cell;
+    background-image: none;
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+  }
+  .form-control {
+    border: none;
+    height: 38px;
+    background-color: #fbfbfb;
+    margin-bottom: 0;
+    color: #5c5e5f;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.11), inset 0 2px 6px rgba(0, 0, 0, 0.49);
+    border-radius: 3px;
+    width: 100%;
+    display: block;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    &:focus {
+      background-color: #fff;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.69);
+      color: #373f45;
+      ~ .sprite-search {
+        @include sprite-sprite(search-active);
+      }
+      ~ .search-reset-btn {
+        display: block;
+      }
+    }
+  }
+}
+
+.input-group.input-group__search {
+  .sprite-search {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 2;
+  }
+  .search-reset-btn {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    margin-top: -9px;
+    border: none;
+    padding: 0;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+  }
+  .form-control {
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+}
+
+.input-group-btn {
+  font-size: 0;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: table-cell;
+  padding-left: 7px;
+}
+
+.btn__search {
+  text-transform: uppercase;
+}
+
+// responcive list
+.nav-list.js-nav-list {
+  @include clearfix;
+}
+
+.nav-list__item {
+  margin-bottom: 9px;
+  display: none;
+  &.active {
+    display: block;
+    .nav-list__item-link {
+      color: #fff;
+      .icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -5px;
+        @include sprite-sprite(menu);
+        @include breakpoint(800px) {
+          display: none;
+        }
+      }
+    }
+  }
+  .open-menu & {
+    display: block;
+    &.active {
+      display: block;
+      .nav-list__item-link {
+        .icon {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -3px;
+          @include sprite-sprite(arrow-right);
+        }
+      }
+    }
+  }
+  @include breakpoint(800px) {
+    display: block !important;
+    float: left;
+    margin-right: 10px;
+    &.active,
+    &:hover {
+      .nav-list__item-link {
+        background-color: #b91602;
+      }
+    }
+  }
+}
+
+.nav-list__item-link {
+  @extend %transition;
+  color: #b7b7b7;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 20px;
+  position: relative;
+  @include breakpoint(800px) {
+    padding: 3px 8px;
+    @include border-radius(5px);
+    color: #fff;
+  }
+}
+
+// cboxes-list
+
+.cboxes-list__wr {
+  max-height: 400px;
+  max-height: 33.3333vh;
+  overflow-y: auto;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include clearfix;
+    li {
+      @include breakpoint(320px 599px) {
+        @include column(1/2, $cycle: 2);
+      }
+      @include breakpoint(600px 799px) {
+        @include column(1/3, $cycle: 3);
+      }
+      @include breakpoint(800px) {
+        @include column(1/4, $cycle: 4);
+      }
+      margin-bottom: 10px;
+    }
+  }
+}
